@@ -1,0 +1,22 @@
+// 例题2.cpp
+
+#include<iostream>
+#include<ctime>
+using namespace std; 
+
+int main()
+{
+	srand((unsigned int)time(NULL));
+	int num=rand()%100+1;
+	int num1;
+	cout<<"请输入数值："<<endl;
+	while(1)
+	{
+	cin>>num1;
+	if(num1==num) {cout<<"You win!"<<endl;break;}
+	else if(num1>num)  cout<<"过大"<<endl;
+	else   cout<<"过小"<<endl;
+	}
+	system("pause");
+	return 0;
+}
