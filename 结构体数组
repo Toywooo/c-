@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+#include <string>
+
+struct student
+{
+	string name;
+	int age;
+	int score;
+};
+
+int main()
+{
+	struct student stuarray[3]=
+	{
+		{"张三",17,100},
+		{"李四",18,75},
+		{"王五",20,60}
+	};
+	for(int i=0;i<3;i++)
+	{
+		cout<<"姓名："<<stuarray[i].name
+			<<" 年龄："<<stuarray[i].age
+			<<" 成绩："<<stuarray[i].score<<endl;
+	}
+	system("pause");
+	return 0;
+}
