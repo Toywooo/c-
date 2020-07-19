@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+#include<string>
+
+struct student
+{
+	string name;
+	int age;
+	int score;
+}s3;
+
+int main()
+{
+	struct student s1={"张三",17,99};
+	struct student s2;
+	s2.name="李四";
+	s2.age=20;
+	s2.score=100;
+	struct student s3={"王五",18,70};
+	cout<<"姓名："<<s1.name<<" 年龄："<<s1.age<<" 成绩："<<s1.score<<endl;
+	cout<<"姓名："<<s2.name<<" 年龄："<<s2.age<<" 成绩："<<s2.score<<endl;
+	cout<<"姓名："<<s3.name<<" 年龄："<<s3.age<<" 成绩："<<s3.score<<endl;
+	system("pause");
+	return 0;
+}
