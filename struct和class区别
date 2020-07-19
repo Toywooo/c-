@@ -1,0 +1,24 @@
+//class默认权限是私有，struct默认权限是公共
+#include<iostream>
+using namespace std;
+#include<string>
+
+class C1 
+{
+	int m_a;//默认权限是私有
+};
+struct C2
+{
+	int m_a;//默认权限是公共
+};
+
+int main()
+{
+	class C1 c1;
+	//c1.m_a=100; 报错
+	struct C2 c2;
+	c2.m_a=10000;//正确
+
+	system("pause");
+	return 0;
+} 
