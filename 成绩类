@@ -1,0 +1,49 @@
+//设计一个学生类，属性有姓名和成绩，可以给姓名和成绩赋值，可以显示学生的姓名和成绩
+#include<iostream>
+using namespace std;
+#include<string>
+
+class student
+{
+public:
+	string name;//属性：姓名
+	int age;
+	void setstudent()
+	{
+		cout<<"请输入学生的姓名："<<endl;
+		cin>>name;
+		cout<<"请输入学生的年龄："<<endl;
+		cin>>age;
+	}
+	void showstudent()
+	{
+		cout<<"姓名："<<name<<" 年龄："<<age<<endl;
+	}
+	void setname(string m_name)
+	{
+		name=m_name;
+	}
+	void setage(int m_age)
+	{
+		age=m_age;
+	}
+};
+
+int main()
+{
+	student s1;
+	s1.setstudent();
+	s1.showstudent();
+	student s2;
+	s2.name="李四";
+	s2.age=17;
+	s2.showstudent();
+	student s3;
+	s3.setname("王五");
+	s3.setage(18);
+	s3.showstudent();
+
+
+	system("pause");
+	return 0;
+} 
