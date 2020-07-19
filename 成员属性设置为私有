@@ -1,0 +1,47 @@
+//设计一个人类，姓名为可读可写，年龄为可读，成绩为可写
+#include<iostream>
+using namespace std;
+#include<string>
+//const double PI=3.14;
+static double PI=3.14;
+
+
+class person
+{
+public:
+	void setname(string name) //写名字
+	{
+		m_name=name;
+	}
+	string getname()           //读名字
+	{
+		return m_name;
+	}
+	int getage()			   //读年龄
+	{
+		m_age=18;
+		return m_age;
+	}
+	void stscore(int score)    //写成绩
+	{
+		m_score=score;
+	}
+
+private:
+	string m_name;//姓名可读可写
+	int m_age;    //年龄只读 
+	int m_score;  //成绩只写
+};
+
+int main()
+{
+	person p;
+    p.setname("张三");  
+	cout<<"姓名为："<<p.getname()<<endl;
+
+	cout<<"年龄为："<<p.getage()<<endl;
+	p.stscore(75);
+
+	system("pause");
+	return 0;
+} 
