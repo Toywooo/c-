@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+#include<string>
+void func(int a,int)//如果某个位置有了默认参数，那么从这个位置往后，从左到右都必须有默认值
+{
+	cout<<"This is func"<<endl;
+}
+int main()
+{
+	func(10,10);
+	system("pause");
+	return 0;
+} 
