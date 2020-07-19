@@ -1,0 +1,46 @@
+//设计一个英雄结构体，按年龄排序
+#include <iostream>
+using namespace std;
+#include <string>
+
+struct heros
+{
+	string name;
+	int age;
+	string sex;
+};
+void bubblesort(struct heros harray[],int len)
+{
+	for(int i=0;i<len-1;i++)
+	{
+		for(int j=0;j<len-i-1;j++)
+		{
+			if(harray[j].age>harray[j+1].age)
+			{
+				struct heros temp=harray[j];
+				harray[j]=harray[j+1];
+				harray[j+1]=temp;
+			}
+		}
+	}
+	for(int p=0;p<len;p++)
+	{
+		cout<<"姓名："<<harray[p].name<<" 年龄："<<harray[p].age<<" 性别："<<harray[p].sex<<endl;
+	}
+}
+int main()
+{
+	struct heros harray[5]=
+	{
+		{"刘备",23,"男"},
+		{"关羽",21,"男"},
+		{"张飞",22,"男"},
+        {"赵云",18,"男"},
+		{"貂蝉",19,"女"},
+	};
+	int len=sizeof(harray)/sizeof(harray[0]);
+	bubblesort(harray,len);
+
+	system("pause");
+	return 0;
+}
