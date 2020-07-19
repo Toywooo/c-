@@ -1,0 +1,36 @@
+//一个老师带一个学生
+#include<iostream>
+using namespace std;
+#include<string>
+
+struct student
+{
+	string name;
+	int age;
+	int score;
+};
+struct teacher
+{
+	int id;
+	string name;
+	int age;
+	struct student stu;
+};
+
+int main()
+{
+	struct teacher t;
+	t.id=100000;
+	t.name="张三";
+	t.age=50;
+	t.stu.name="李四";
+	t.stu.age=18;
+	t.stu.score=99;
+	cout<<"老师的信息为："<<endl;
+	cout<<"职工编号："<<t.id<<" 姓名："<<t.name<<" 年龄："<<t.age<<endl;
+	cout<<"学生姓名："<<t.stu.name<<"  年龄："<<t.stu.age<<" 成绩："<<t.stu.score<<endl;
+
+
+	system("pause");
+	return 0;
+}
