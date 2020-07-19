@@ -1,0 +1,30 @@
+//满足条件：1.同一个作用域下 2.函数名称相同 3.函数参数类型不同，或者个数不同或顺序不同
+#include<iostream>
+using namespace std;
+#include<string>
+
+int func(int a,int b)
+{
+	return a+b;
+}
+int func(int a,int b,int c)
+{
+	return a+b+c;
+}
+int func(int a,int b,int c,int d)
+{
+	return a+b+c+d;
+}
+
+int main()
+{
+	int a=func(10,10);
+	int b=func(10,10,10);
+	int c=func(10,10,10,10);
+
+	cout<<"a="<<a<<endl;
+	cout<<"b="<<b<<endl;
+	cout<<"c="<<c<<endl;
+	system("pause");
+	return 0;
+} 
