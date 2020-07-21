@@ -1,0 +1,45 @@
+//栅栏价格为35元每米，过道造价为20元每平方米，过道宽度设置为3米，游泳池半径由键盘输入
+#include<iostream>
+using namespace std;
+const float PI=3.141593;
+const float FENCE_PRICE=35;
+const float CONCRETE_PRICE=20;
+class circle
+{
+public:
+	circle(float r);
+	float circumference();
+	float area();
+private:
+	float radius;
+};
+circle::circle(float r)
+{
+	radius=r;
+}
+float circle::circumference()
+{
+	return 2*PI*radius;
+}
+float circle::area()
+{
+	return PI*radius*radius;
+}
+int main()
+{
+	 float radius;
+	 cout<<"Enter the radius of the pool:"<<endl;
+	 cin>>radius;
+	 circle pool(radius);
+	 circle poolrim(radius+3);
+
+	 float fencecost=poolrim.circumference()*FENCE_PRICE;
+	 cout<<"Fencing cost is $"<<fencecost<<endl;
+
+	 float concretecost=(poolrim.area()-pool.area())*CONCRETE_PRICE;
+	 cout<<"Concrete cost is $"<<concretecost<<endl;
+
+	 system("pause");
+	 return 0;
+}
+
