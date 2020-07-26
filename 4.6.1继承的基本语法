@@ -1,0 +1,131 @@
+#include<iostream>
+using namespace std;
+//class Java
+//{
+//public:
+//	void header()
+//	{
+//		cout<<"首页、公开课、登录、注册"<<endl;
+//	}
+//	void footer()
+//	{
+//		cout<<"帮助中心、交流合作、站内地图"<<endl;
+//	}
+//	void left()
+//	{
+//		cout<<"Java、Python、C++"<<endl;
+//	}
+//	void content()
+//	{
+//		cout<<"Java视频课程"<<endl;
+//	}
+//};
+//class Python
+//{
+//public:
+//	void header()
+//	{
+//		cout<<"首页、公开课、登录、注册"<<endl;
+//	}
+//	void footer()
+//	{
+//		cout<<"帮助中心、交流合作、站内地图"<<endl;
+//	}
+//	void left()
+//	{
+//		cout<<"Java、Python、C++"<<endl;
+//	}
+//	void content()
+//	{
+//		cout<<"Python视频课程"<<endl;
+//	}
+//};
+//class CPP
+//{
+//public:
+//	void header()
+//	{
+//		cout<<"首页、公开课、登录、注册"<<endl;
+//	}
+//	void footer()
+//	{
+//		cout<<"帮助中心、交流合作、站内地图"<<endl;
+//	}
+//	void left()
+//	{
+//		cout<<"Java、Python、C++"<<endl;
+//	}
+//	void content()
+//	{
+//		cout<<"C++视频课程"<<endl;
+//	}
+//};
+class basepage
+{
+public:
+	void header()
+	{
+		cout<<"首页、公开课、登录、注册"<<endl;
+	}
+	void footer()
+	{
+		cout<<"帮助中心、交流合作、站内地图"<<endl;
+	}
+	void left()
+	{
+		cout<<"java、python、c++"<<endl;
+	}
+};
+class Java:public basepage
+{
+public:
+	void content()
+	{
+		cout<<"Java视频课程"<<endl;
+	}
+};
+class Python:public basepage
+{
+public:
+	void content()
+	{
+		cout<<"Python视频课程"<<endl;
+	}
+};
+class CPP:public basepage
+{
+public:
+	void content()
+	{
+		cout<<"C++视频课程"<<endl;
+	}
+};
+void test01()
+{
+	cout<<"-----------------------------"<<endl;
+	Java java;
+	java.header();
+	java.footer();
+	java.left();
+	java.content();
+	cout<<"-----------------------------"<<endl;
+	Python p;
+	p.header();
+	p.footer();
+	p.left();
+	p.content();
+	cout<<"-----------------------------"<<endl;
+	CPP cpp;
+	cpp.header();
+	cpp.footer();
+	cpp.left();
+	cpp.content();
+	cout<<"-----------------------------"<<endl;
+}
+	
+int main()
+{	
+	test01();
+	system("pause");
+	return 0;
+}
