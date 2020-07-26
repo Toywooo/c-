@@ -1,0 +1,33 @@
+//类的访问权限
+#include<iostream>
+using namespace std;
+#include<string>
+
+class person 
+{
+public:       //成员 类内可以访问，类外可以访问
+	string name;
+
+protected:    //成员 类内可以访问，类外不可以访问  儿子可以访问父亲中的保护内容
+	string car;
+
+private:      //成员 类内可以访问，类外不可以访问  儿子不可以访问父亲的私有内容
+	int password;
+
+public:       //成员属性和成员函数都有权限
+	void func()
+	{
+		name="张三";
+		car="拖拉机";
+		password=123456;
+	}
+};
+
+int main()
+{
+	person p1;
+	p1.name="李四";
+	//p1.car="奔驰";   保护权限和私有权限的内容在类外无法访问
+	system("pause");
+	return 0;
+} 
