@@ -1,0 +1,53 @@
+#include<iostream>
+using namespace std;
+class Base
+{
+public:
+	static int m_a;
+	static void func()
+	{
+		cout<<"父类的同名函数"<<endl;
+	}
+	static void func(int a)
+	{
+		cout<<"父类的同名函数(int a)"<<endl;
+	}
+};
+int Base::m_a=100;
+class Son:public Base
+{
+public:
+	static int m_a;
+	static void func()
+	{
+		cout<<"子类的同名函数"<<endl;
+	}
+};
+int Son::m_a=200;
+void test01()
+{
+	Son s;
+	//通过对象访问
+	cout<<s.m_a<<endl;
+	cout<<s.Base::m_a<<endl;
+	//通过类名访问
+	cout<<Son::m_a<<endl;
+	cout<<Son::Base::m_a<<endl;
+}
+void test02()
+{
+	Son s;
+	s.func();
+	s.Base::func();
+	Son::func();
+	Son::Base::func();
+	Son::func();
+	Son::Base::func(100);
+}
+int main() 
+{
+	test01();
+	test02();
+	system("pause");
+	return 0;
+}
