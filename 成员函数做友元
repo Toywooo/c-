@@ -1,0 +1,48 @@
+#include<iostream>
+using namespace std;
+#include<string>
+class Building;
+class goodfriend
+{
+public:
+	goodfriend();
+	void visit();//让visit函数可以访问Building中的私有成员
+	void visit2();//让visit2函数不可以访问Building中的私有成员
+	Building *building;
+};
+class Building
+{
+	friend  void visit();
+public:
+	string m_settingroom;
+	Building();
+private:
+	string m_bedroom;
+};
+Building::Building()
+{
+	m_settingroom="客厅";
+	m_bedroom="卧室";
+}
+goodfriend::goodfriend()
+{
+	building =new Building;
+}
+void goodfriend::visit()
+{
+	cout<<"visit函数正在访问："<<building->m_settingroom<<endl;
+	cout<<"visit函数正在访问："<<building->m_bedroom<<endl;
+}
+void goodfriend::visit2()
+{
+	cout<<"visit2函数正在访问："<<building->m_settingroom<<endl;
+	cout<<"visit2函数正在访问："<<building->m_bedroom<<endl;
+}
+int main()
+{
+	goodfriend GF;
+	GF.visit();
+	GF.visit2();
+	system("pause");
+	return 0;
+}
